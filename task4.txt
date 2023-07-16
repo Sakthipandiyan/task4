@@ -1,0 +1,65 @@
+1) Print odd numbers in an array(anonymous)
+-----------------------------------
+const numbers=[4,6,2,7,9,12,23,89];
+const odds=[];
+for(const num of numbers){
+  if(num%2===1){
+    odds.push(num);
+  }
+}
+console.log(odds);
+
+
+1) Print odd numbers in an array(IIFE)
+-----------------------------------
+(function(array){
+             for(var i = 0 ; i< array.length ; i++){
+                        if(array[i]%2!=0){
+                           console.log(array[i])
+                        } 
+                   }
+             })([1,2,3,4,7,9,10,5,11,3.3]);
+
+
+
+2.Convert all the strings to title caps in a string array(IIFE)
+-----------------------------------------------------------
+(function (acaps) {
+                    acaps = acaps.toLowerCase().split(' ');
+                    for (var i = 0; i < acaps.length; i++) {
+                      acaps[i] = acaps[i].charAt(0).toUpperCase() + acaps[i].slice(1); 
+                    } 
+                    return acaps.join(' ');
+                  })("THE STRING FUNCTION IS GOING ON");
+
+3.Sum of all numbers in an array(IIFE)
+------------------------------------
+ (function(number){
+             var sum = 0;
+                  for(var i = 0 ; i< number.length ; i++){
+                     sum = sum + number[i];
+                   }
+                   return sum;
+             })([1,2,3,4]);
+console.log(sum);
+
+
+4.Return all the prime numbers in an array(IIFE)
+-----------------------------------------------
+(function(prime){
+                      prime = prime.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(prime);
+                  })([54,76,32,23]);
+
+5.Remove duplicates from an array
+-------------------------------------
+(function(array){
+                        let dup = [...new Set(array)];
+                        console.log(dup);
+                       })([1,1,2,3,4])
+
